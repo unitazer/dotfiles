@@ -1,0 +1,4 @@
+#!/bin/bash
+waybar &
+waybar --config ~/dotfiles/general/waybar/conf/main-bottom.jsonc &
+swww img ~/dotfiles/general/backgrounds/BH.png
