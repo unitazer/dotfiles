@@ -8,18 +8,12 @@
     "height": 25,
     "modules-left": [
         "custom/launch_wofi",
-        "custom/launch_chromium",
         "custom/launch_thunderbird",
         "custom/launch_kitty",
         "custom/launch_thunar"
     ],
     "modules-center": ["wlr/taskbar"],
 
-    "custom/launch_chromium": {
-        "format": "",
-        "on-click": "chromium",
-        "tooltip": false
-    },
 
     "custom/launch_thunderbird": {
         "format": "󰇰",

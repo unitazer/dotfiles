@@ -19,6 +19,16 @@ local plugins = {
     end
   },
   {
+    "saecki/crates.nvim",
+    ft = {"rust", "toml"},
+    config = function()
+      local crates = require("crates")
+      crates.setup()
+      crates.show()
+    end,
+
+  },
+  {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("core.utils").load_mappings("dap")
@@ -59,7 +69,11 @@ local plugins = {
         "json-lsp",
         "yaml-language-server",
         "omnisharp",
-        "omnisharp-mono"
+        "omnisharp-mono",
+        "lua-language-server",
+        "bash-language-server",
+        "dockerfile-language-server",
+        "docker-compose-language-service"
       },
     },
   },
@@ -69,6 +83,24 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts = function()
+      return require "custom.configs.rust-tools"
+    end,
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
+    end
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end
   },
   {
     'Exafunction/codeium.vim',
