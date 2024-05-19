@@ -463,7 +463,6 @@ imath
 imlib2
 iniparser
 iproute2
-iptables-nft
 iputils
 iso-codes
 jansson
