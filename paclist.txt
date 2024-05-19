@@ -22,6 +22,7 @@ attr
 audit
 augeas
 autoconf
+autoconf-archive
 automake
 avahi
 ayatana-ido
@@ -60,8 +61,8 @@ cairomm-1.16
 calc
 cantarell-fonts
 capstone
-cava
-cava-debug
+cava-git
+cava-git-debug
 cdparanoia
 cdrtools
 chromium
@@ -102,6 +103,7 @@ docker-buildx
 docker-compose
 docker-desktop
 docker-desktop-debug
+dos2unix
 dosfstools
 double-conversion
 dtc
@@ -463,6 +465,7 @@ imath
 imlib2
 iniparser
 iproute2
+iptables
 iputils
 iso-codes
 jansson
@@ -1175,6 +1178,7 @@ rasqal
 rav1e
 readline
 redland
+reflector
 reiserfsprogs
 rhash
 ripgrep
@@ -1217,6 +1221,9 @@ speexdsp
 spice
 spice-gtk
 spice-protocol
+spicetify-cli
+spicetify-cli-debug
+spicetify-marketplace-bin
 spirv-tools
 spotify
 sqlite
@@ -1304,6 +1311,7 @@ vte3
 vulkan-headers
 vulkan-icd-loader
 vulkan-validation-layers
+w3m
 wavpack
 waybar
 wayland
@@ -1378,5 +1386,6 @@ zix
 zlib
 zmap
 zoxide
+zram-generator
 zstd
 zxing-cpp
