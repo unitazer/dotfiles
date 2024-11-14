@@ -1,4 +1,7 @@
-rm -rf ~/.config/nvim
+#this is horrible, do not run it please
+
+
+rm -r ~/.config/nvim
 ln -s ~/dotfiles/nvim/ ~/.config/nvim
 cd ~/.config/ 
 rm -rf hypr kitty mako swaylock wofi wlogout waybar 
