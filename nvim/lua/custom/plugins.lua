@@ -74,6 +74,8 @@ local plugins = {
         "arduino-language-server",
         "cmake-language-server",
         "dockerfile-language-server",
+        "jdtls",
+        "google-java-format",
         "clangd",
         "docker-compose-language-service"
       },
