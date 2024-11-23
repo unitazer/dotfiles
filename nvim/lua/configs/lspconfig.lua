@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 local configs = require "nvchad.configs.lspconfig"
 
 local servers = {
-  html = {},
+  html = {}, --defaults 
   awk_ls = {},
   bashls = {},
   cssls = {},
@@ -11,6 +11,7 @@ local servers = {
   yamlls = {},
   jdtls = {},
   csharp_ls = {},
+  hyprls={},
 
   clangd = {
     filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
