@@ -16,7 +16,7 @@ local options = {
     adaptive_size = true,
     side = "right",
     width = 45, -- used to be 30 before the java incedent
-    preserve_window_proportions = true,
+    preserve_window_proportions = false,
   },
   git = {
     enable = true,
