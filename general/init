@@ -1,5 +1,6 @@
 #!/bin/bash
 waybar --config ~/dotfiles/general/waybar/conf/main.jsonc --style ~/dotfiles/general/waybar/style/style.css  &
 waybar --config ~/dotfiles/general/waybar/conf/main-bottom.jsonc --style ~/dotfiles/general/waybar/style/style.css &
-./nvidiafan/nvidiafan.sh &
+#./nvidiafan/nvidiafan.sh &
+
 swww-daemon & 
