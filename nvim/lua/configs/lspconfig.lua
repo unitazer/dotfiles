@@ -3,15 +3,22 @@ require("nvchad.configs.lspconfig").defaults()
 local configs = require "nvchad.configs.lspconfig"
 
 local servers = {
-  html = {}, --defaults 
+  html = {}, --defaults
   awk_ls = {},
   bashls = {},
   cssls = {},
   jsonls = {},
   yamlls = {},
   jdtls = {},
+
+  
   csharp_ls = {},
-  hyprls={},
+  hyprls = {
+    cmd = { "hyprls", "--stdio" },
+    filetypes = { "hyprlang" },
+    root_dir = require("lspconfig.util").find_git_ancestor(),
+    single_file_support = true,
+  },
 
   clangd = {
     filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
