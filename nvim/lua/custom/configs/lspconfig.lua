@@ -1,6 +1,7 @@
 local lspconfig = require("plugins.configs.lspconfig")
 local on_attach = lspconfig.on_attach
 local capabilities = lspconfig.capabilities
+lspconfig = require("lspconfig")
 lspconfig.html.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -27,6 +28,25 @@ lspconfig.jdtls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "java" },
+
+  -- settings = {
+  --
+  --   java = {
+  --     configuration = {
+  --       runtimes = 
+  --         {
+  --           -- {
+  --           --   name = "JavaSE-17",
+  --           --   path = "/usr/lib/jvm/java-17-openjdk",
+  --           -- },
+  --           {
+  --             name = "JavaSE-8",
+  --             path = "/usr/lib/jvm/java-8-openjdk"
+  --           }
+  --         }
+  --     }
+  --   }
+  -- }
 })
 
 

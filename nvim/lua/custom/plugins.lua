@@ -54,7 +54,6 @@ local plugins = {
       return require "custom.configs.null-ls"
     end,
   },
-  {"CRAG666/code_runner.nvim", config = true},
   {
     "williamboman/mason.nvim",
     opts = {
