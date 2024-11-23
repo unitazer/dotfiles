@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+local lspconfig = require("plugins.configs.lspconfig")
 local on_attach = lspconfig.on_attach
 local capabilities = lspconfig.capabilities
 lspconfig.html.setup({
