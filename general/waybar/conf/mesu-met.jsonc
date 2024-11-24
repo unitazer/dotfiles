@@ -1,7 +1,0 @@
-{ "clock": {
-        "draw": "{:%H:%M:%S}",
-        "tooltip-format": "{:%A, %e %B %Y}",
-        "tooltip": true
-    }
-
-}
