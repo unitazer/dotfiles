@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# one day i will turn this into a systemd service i prommise :3
 # Function
 setfan() {
   xhost si:localuser:root

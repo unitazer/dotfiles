@@ -1,6 +1,6 @@
 window {
     margin: 0px;
-    background-color: #282828;
+    background-color: #100F0F;
     border-radius: 15px;
 }
 
@@ -9,25 +9,25 @@ window {
     margin: 4px;
     padding-left: 20px;
     border: none;
-    color: #ebdbb2;
+    color: #FFFCF0;
     font-weight: bold;
-    background-color: #282828;
+    background-color: #100F0F;
    	outline: none;
     border-radius: 15px;
     margin: 10px;
     margin-bottom: 2px;
 }
 #input:focus {
-    border: 0px solid #282828;
+    border: 0px solid #100F0F;
     margin-bottom: 0px;
 }
 
 #inner-box {
     margin: 4px;
-    border: 10px solid #282828;
+    border: 10px solid #100F0F;
     color: #ebdbb2;
     font-weight: bold;
-    background-color: #282828;
+    background-color: #100F0F;
     border-radius: 15px;
 }
 
@@ -35,7 +35,7 @@ window {
     margin: 0px;
     border: none;
     border-radius: 15px;
-    background-color: #282828;
+    background-color: #100F0F;
 }
 
 #scroll {
@@ -47,28 +47,28 @@ window {
 }
 
 #img:selected {
-    background-color: #ebdbb2;
+    background-color: #5E409D;
     border-radius: 15px;
 }
 
 #text:selected {
-    color: #282828;
+    color: #FFFCF0;
     margin: 0px 0px;
     border: none;
     border-radius: 15px;
-    background-color: #ebdbb2;
+    background-color: #5E409D;
 }
 
 #entry {
     margin: 0px 0px;
     border: none;
     border-radius: 15px;
-    background-color: #282828;
+    background-color: #100F0F;
 }
 
 #entry:selected {
     margin: 0px 0px;
     border: none;
     border-radius: 15px;
-    background-color: #ebdbb2;
+    background-color: #5E409D;
 }
