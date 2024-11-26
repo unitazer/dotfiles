@@ -1,0 +1,2 @@
+stolen with love directly from https://github.com/kepano/flexoki, amazing theme <3
+oh also, nwg-look doesnt follow symlinks so you can symlink ~/dotfiles/global/gtk/ -> ~/.local/share/themes/flexoki because fuck me i guess
