@@ -11,15 +11,10 @@ local servers = {
   yamlls = {},
   jdtls = {},
 
-  
   csharp_ls = {},
-  hyprls = {
-    cmd = { "hyprls", "--stdio" },
-    filetypes = { "hyprlang" },
-    root_dir = require("lspconfig.util").find_git_ancestor(),
-    single_file_support = true,
-  },
-
+  hyprls = {},
+  docker_compose_language_service = {},
+  glslls={},
   clangd = {
     filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
     cmd = { "clangd", "--background-index" },
@@ -35,7 +30,6 @@ local servers = {
     ),
   },
 
-  docker_compose_language_service = {},
   dockerls = {
     settings = {
       docker = {

@@ -31,8 +31,8 @@
     "tooltip": false
   },
   "clock": {
-    "draw": "{+%F %T}",
-    "tooltip-format": "{:%A, %e %B %Y}",
+    "format": "{0:%d/%m/%Y} {0:%H:%M}",
+    "tooltip-format": "{:%A %e %B %Y}",
     "tooltip": true
   },
   "cpu": {
