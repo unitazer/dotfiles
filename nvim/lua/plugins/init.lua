@@ -67,6 +67,7 @@ return {
         "jdtls",
         "clangd",
         "yamlls",
+        "glsl_analyzer",
         "hyprls",
       },
     },

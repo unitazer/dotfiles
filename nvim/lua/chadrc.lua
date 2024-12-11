@@ -13,4 +13,12 @@ M.base46 = {
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
+M.ui = {
+  tabufline = {
+    overriden_modules = function(modules)
+      table.insert(modules, modules[1])
+      table.remove(modules, 1)
+    end,
+  }, --https://github.com/NvChad/ui/issues/68 does not fucking work
+}
 return M
