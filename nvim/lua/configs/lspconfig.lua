@@ -13,7 +13,7 @@ local servers = {
   csharp_ls = {},
   hyprls = {},
   docker_compose_language_service = {},
-  glsl_analyzer = {},
+  glsl_analyzer = { filetypes = { "glsl","frag" } },
   clangd = {
     filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
     cmd = { "clangd", "--background-index" },
