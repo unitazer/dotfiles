@@ -69,6 +69,7 @@ return {
         "yamlls",
         "glsl_analyzer",
         "hyprls",
+        "google-java-format",
       },
     },
   },

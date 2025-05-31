@@ -1,7 +1,7 @@
 local M = {}
 
 M.opts = {
-  filters = { dotfiles = false },
+  filters = { dotfiles = true },
   disable_netrw = true,
   hijack_cursor = true,
   sync_root_with_cwd = true,
@@ -13,6 +13,11 @@ M.opts = {
     width = 30,
     preserve_window_proportions = true,
     side = "right",
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500,
   },
   renderer = {
     root_folder_label = false,

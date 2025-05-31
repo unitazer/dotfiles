@@ -13,14 +13,18 @@ local servers = {
       "/usr/lib/jvm/java-21-openjdk/bin/java",
     },
     filetypes = { "java" },
-    on_init = function (_,_)
+    on_init = function(_, _)
       require("nvim-tree.view").resize(55) --yes, its that bad
-    end
+    end,
   },
   gooberscript = {
     name = "gooberscript",
     cmd = { "nc", "127.0.0.1", "25564" },
     filetypes = { "groovy" },
+    root_markets = { ".git", "packwiz", "pack.toml", "." },
+    on_init = function()
+      require("nvim-tree.view").resize(35)
+    end,
   },
   csharp_ls = {},
   hyprls = {},
