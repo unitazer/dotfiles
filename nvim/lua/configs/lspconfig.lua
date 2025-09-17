@@ -14,9 +14,9 @@ local servers = {
     },
     filetypes = { "java" },
     root_markets = { ".git", "build.gradle", "." },
-    on_init = function(_, _)
-      require("nvim-tree.view").resize(55) --yes, its that bad
-    end,
+    -- on_init = function(_, _)
+    --   require("nvim-tree.view").resize(55) --yes, its that bad
+    -- end,
   },
   -- groovyls = {
   --   filetypes = { "groovy" },
@@ -39,8 +39,26 @@ local servers = {
     filetypes = { "groovy" },
     root_markets = { "build.gradle.kts", ".git", "packwiz", "pack.toml", "./" },
     on_init = function()
-      require("nvim-tree.view").resize(35)
+      print "this wont go well"
+      require("nvim-tree").explorer.view.resize(40)
     end,
+  },
+  scala = {
+    cmd = { "metals" },
+    filetypes = { "scala" },
+    root_markers = { "build.sbt", "build.sc", "build.gradle", "pom.xml" },
+    init_options = {
+      statusBarProvider = "show-message",
+      isHttpEnabled = true,
+      compilerOptions = {
+        snippetAutoIndent = false,
+      },
+    },
+    capabilities = {
+      workspace = {
+        configuration = false,
+      },
+    },
   },
 
   csharp_ls = {},
@@ -109,6 +127,9 @@ for name, opts in pairs(servers) do
   vim.lsp.enable(name)
   vim.lsp.config(name, opts)
 end
+--doesnt fit into the normal list since some dumbass thought that nil is a good name when its a lua keyword
+vim.lsp.enable "nil"
+vim.lsp.config("nil", {})
 
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
   pattern = "*",

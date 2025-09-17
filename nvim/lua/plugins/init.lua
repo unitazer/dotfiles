@@ -46,6 +46,7 @@ return {
         "awk-ls",
         "csharp-ls",
         "jdtls",
+        "nil",
         "clangd",
         "yamlls",
         "glsl_analyzer",
@@ -68,7 +69,5 @@ return {
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
   },
-  {
-
-  }
- }
+  {},
+}
