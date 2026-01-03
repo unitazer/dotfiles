@@ -1,4 +1,9 @@
 require("nvchad.configs.lspconfig").defaults()
+
+local mason_path = vim.fn.stdpath "data" .. "mason"
+local jda_path_pattern = mason_path
+  .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+
 local servers = {
   html = {}, --defaults
   awk_ls = {},
@@ -12,11 +17,16 @@ local servers = {
       "--java-executable",
       "/usr/lib/jvm/java-21-openjdk/bin/java",
     },
+    -- init_options = {
+    --   bundles = {
+    --     vim.fn.glob(jda_path_pattern),
+    --   },
+    -- },
     filetypes = { "java" },
     root_markets = { ".git", "build.gradle", "." },
-    -- on_init = function(_, _)
-    --   require("nvim-tree.view").resize(55) --yes, its that bad
-    -- end,
+    on_init = function(_, _)
+      require("nvim-tree.view").resize(55) --yes, its that bad
+    end,
   },
   -- groovyls = {
   --   filetypes = { "groovy" },
@@ -39,8 +49,7 @@ local servers = {
     filetypes = { "groovy" },
     root_markets = { "build.gradle.kts", ".git", "packwiz", "pack.toml", "./" },
     on_init = function()
-      print "this wont go well"
-      require("nvim-tree").explorer.view.resize(40)
+      require("nvim-tree.view").resize(55)
     end,
   },
   scala = {
@@ -102,6 +111,7 @@ local servers = {
       },
     },
   },
+  ["wgsl_analyzer"] = {},
   rust_analyzer = {
     settings = {
       ["rust-analyzer"] = {

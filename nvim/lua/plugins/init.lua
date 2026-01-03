@@ -25,6 +25,7 @@ return {
       },
     },
   },
+
   {
     "williamboman/mason.nvim",
     opts = {
@@ -37,6 +38,7 @@ return {
         },
       },
       ensure_installed = {
+        "wgsl-analyzer",
         "lua-language-server",
         "css-lsp",
         "html-lsp",
@@ -46,6 +48,7 @@ return {
         "awk-ls",
         "csharp-ls",
         "jdtls",
+        "java-debug-adapter",
         "nil",
         "clangd",
         "yamlls",
@@ -57,6 +60,8 @@ return {
   },
   {
     "saecki/crates.nvim",
+
+    lazy = true,
     ft = { "rust", "toml" },
     config = function()
       local crates = require "crates"
@@ -66,8 +71,12 @@ return {
   },
   {
     "simrat39/rust-tools.nvim",
+    lazy = true,
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
   },
-  {},
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require "configs.nvimtree",
+  },
 }

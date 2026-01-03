@@ -1,3 +1,5 @@
+
+print("nvimtree config ran")
 local M = {}
 
 M.opts = {
@@ -11,7 +13,6 @@ M.opts = {
   },
   view = {
     width = 30,
-    preserve_window_proportions = true,
     side = "right",
   },
   git = {
@@ -40,5 +41,5 @@ M.opts = {
   },
 }
 
-require("nvim-tree").setup(M.opts)
-return M
+--require("nvim-tree").setup(M.opts)
+return M.opts
