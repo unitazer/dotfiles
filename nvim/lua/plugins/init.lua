@@ -22,12 +22,15 @@ return {
         "css",
         "java",
         "hyprlang",
+        "rust",
+        "c_sharp"
       },
     },
   },
 
   {
     "williamboman/mason.nvim",
+    lazy = false,
     opts = {
       ui = {
         border = "rounded",
@@ -43,10 +46,8 @@ return {
         "css-lsp",
         "html-lsp",
         "bash-language-server",
-        "json-lsp",
         "docker-compose-language-service",
         "awk-ls",
-        "csharp-ls",
         "jdtls",
         "java-debug-adapter",
         "nil",
@@ -55,6 +56,11 @@ return {
         "glsl_analyzer",
         "hyprls",
         "google-java-format",
+        "taplo",
+        "xmlformatter",
+        "omnisharp",
+        "dotnet-format",
+        "codelldb",
       },
     },
   },
@@ -78,5 +84,17 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = require "configs.nvimtree",
+  },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("gitblame").setup({
+        enabled = true,
+        message_template = " <summary> • <date> • <author> • <sha>",
+        date_format = "%r",
+        highlight_group = "Comment",
+      })
+    end,
   },
 }

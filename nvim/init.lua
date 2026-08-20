@@ -32,6 +32,13 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
+vim.api.nvim_create_autocmd("QuitPre", {
+  callback = function()
+    vim.cmd("NvimTreeClose")
+  end,
+  desc = "close nvim-tree before quitting",
+})
+
 vim.schedule(function()
   require "mappings"
 end)

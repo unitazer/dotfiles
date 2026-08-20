@@ -2,4 +2,4 @@
 waybar --config ~/dotfiles/general/waybar/conf/main.jsonc --style ~/dotfiles/general/waybar/style/style.css  &
 waybar --config ~/dotfiles/general/waybar/conf/main-bottom.jsonc --style ~/dotfiles/general/waybar/style/style.css &
 
-swww-daemon & 
+awww-daemon & 

@@ -9,13 +9,12 @@ local servers = {
   awk_ls = {},
   bashls = {},
   cssls = {},
-  jsonls = {},
   yamlls = {},
   jdtls = {
     cmd = {
       "jdtls",
       "--java-executable",
-      "/usr/lib/jvm/java-21-openjdk/bin/java",
+      "/usr/lib/jvm/java-25-openjdk/bin/java",
     },
     -- init_options = {
     --   bundles = {
@@ -24,9 +23,6 @@ local servers = {
     -- },
     filetypes = { "java" },
     root_markets = { ".git", "build.gradle", "." },
-    on_init = function(_, _)
-      require("nvim-tree.view").resize(55) --yes, its that bad
-    end,
   },
   -- groovyls = {
   --   filetypes = { "groovy" },
@@ -48,29 +44,28 @@ local servers = {
     cmd = { "nc", "127.0.0.1", "25564" },
     filetypes = { "groovy" },
     root_markets = { "build.gradle.kts", ".git", "packwiz", "pack.toml", "./" },
-    on_init = function()
+    on_attach = function()
       require("nvim-tree.view").resize(55)
     end,
   },
-  scala = {
-    cmd = { "metals" },
-    filetypes = { "scala" },
-    root_markers = { "build.sbt", "build.sc", "build.gradle", "pom.xml" },
-    init_options = {
-      statusBarProvider = "show-message",
-      isHttpEnabled = true,
-      compilerOptions = {
-        snippetAutoIndent = false,
-      },
-    },
-    capabilities = {
-      workspace = {
-        configuration = false,
-      },
-    },
-  },
+  -- scala = {
+  --   cmd = { "metals" },
+  --   filetypes = { "scala" },
+  --   root_markers = { "build.sbt", "build.sc", "build.gradle", "pom.xml" },
+  --   init_options = {
+  --     statusBarProvider = "show-message",
+  --     isHttpEnabled = true,
+  --     compilerOptions = {
+  --       snippetAutoIndent = false,
+  --     },
+  --   },
+  --   capabilities = {
+  --     workspace = {
+  --       configuration = false,
+  --     },
+  --   },
+  --   },
 
-  csharp_ls = {},
   hyprls = {},
   docker_compose_language_service = {},
   glsl_analyzer = { filetypes = { "glsl", "frag" } },
@@ -78,15 +73,7 @@ local servers = {
     filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
     cmd = { "clangd", "--background-index" },
     single_file_support = true,
-    root_dir = require("lspconfig").util.root_pattern(
-      ".clangd",
-      ".clang-tidy",
-      ".clang-format",
-      "compile_commands.json",
-      "compile_flags.txt",
-      "configure.ac",
-      ".git"
-    ),
+    root_dir = vim.fs.root(0, { ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git" }),
   },
 
   dockerls = {
@@ -116,30 +103,40 @@ local servers = {
     settings = {
       ["rust-analyzer"] = {
         imports = {
-          granularity = {
-            group = "module",
-          },
+          granularity = { group = "module" },
           prefix = "self",
         },
-        cargo = {
-          buildScripts = {
-            enable = true,
-          },
-        },
-        procMacro = {
-          enable = true,
-        },
+        cargo = { buildScripts = { enable = true } },
+        procMacro = { enable = true },
+        lru = { capacity = 44 },
       },
     },
+  },
+  ["nil"] = {},
+  omnisharp = {
+    filetypes = { "cs" },
+    root_dir = vim.fs.root(0, { ".csproj", ".sln", ".git" }),
+    enable_editorconfig_support = true,
+    enable_roslyn_analyzers = true,
+    organize_imports_on_format = true,
+    enable_import_completion = true,
   },
 }
 for name, opts in pairs(servers) do
   vim.lsp.enable(name)
   vim.lsp.config(name, opts)
 end
---doesnt fit into the normal list since some dumbass thought that nil is a good name when its a lua keyword
-vim.lsp.enable "nil"
-vim.lsp.config("nil", {})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.java",
+  callback = function()
+    local nvimtree_loaded = package.loaded["nvim-tree"] ~= nil
+    if nvimtree_loaded then
+      vim.cmd("NvimTreeResize 55")
+    end
+  end,
+})
+
 
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
   pattern = "*",
